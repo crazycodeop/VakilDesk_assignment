@@ -7,7 +7,7 @@ class Command(BaseCommand):
     help = 'Populates the database with sample data'
 
     def handle(self, *args, **kwargs):
-        # Create customers
+        # create customers
         customers = []
         for i in range(10):
             customer = Customer.objects.create(
@@ -16,7 +16,7 @@ class Command(BaseCommand):
             )
             customers.append(customer)
 
-        # Create orders
+        # create orders
         statuses = ['completed', 'pending', 'cancelled']
         for _ in range(100):
             customer = random.choice(customers)
